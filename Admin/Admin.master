@@ -1,0 +1,91 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="Admin.master.cs" Inherits="Admin_Admin" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <style type="text/css">
+        .auto-style1 {
+            width: 100%;
+        }
+        .search{
+            border:1px solid;
+            border-radius:10px; 
+        }
+
+        .auto-style2 {
+            text-align: right;
+        }
+
+    </style>
+    <link rel="stylesheet" type="text/css" href="../engine1/style.css" />
+	<script type="text/javascript" src="../engine1/jquery.js"></script>
+</head>
+<body >
+    <form id="form1" runat="server">
+    <div>
+        <table cellpadding="5" class="auto-style1" align="center">
+            <tr>
+                <td rowspan="2" style="text-align: left">
+                    <asp:Image ID="Image1" runat="server" Height="80px" ImageUrl="~/Images/logo.png" Width="260px" />
+                </td>
+                <td class="auto-style2">
+                    &nbsp;
+                    <asp:Image ID="Image2" runat="server" Height="40px" ImageUrl="~/Images/user.png" Width="40px" />
+                </td>
+                <td style="font-family: sans-serif; font-size: 20px; font-weight: 400">
+                    <asp:Label ID="Label1" runat="server"></asp:Label>
+                </td>
+            </tr>
+            <tr>
+                <td style="text-align: center" colspan="2">
+                    <asp:ImageButton ID="ImageButton1" runat="server" Height="40px" ImageUrl="~/Images/exit.png" style="text-align: right" Width="40px" PostBackUrl="~/User/Home.aspx" />
+                </td>
+            </tr>
+            <tr>
+                <td colspan="3">
+                    <asp:Menu ID="Menu1" runat="server" Orientation="Horizontal" RenderingMode="Table" Width="100%" BackColor="#339966" ForeColor="White" Height="40px" Font-Size="15pt" style="text-align: center; font-family: sans-serif; font-size: 20px; font-weight: 400">
+                        <DynamicMenuStyle BackColor="#339966" />
+                        <Items>
+                            <asp:MenuItem Text="Home" Value="Home" NavigateUrl="~/Admin/Home.aspx"></asp:MenuItem>
+                            <asp:MenuItem Text="Manage Category" Value="About Us" NavigateUrl="~/Admin/Category.aspx"></asp:MenuItem>
+                            <asp:MenuItem Text="Manage Brand" Value="Contact" NavigateUrl="~/Admin/Brand.aspx"></asp:MenuItem>
+                            <asp:MenuItem Text="Manage Product" Value="Product" NavigateUrl="~/Admin/Product.aspx"></asp:MenuItem>
+                            <asp:MenuItem NavigateUrl="~/Admin/ManageOrderaspx.aspx" Text="Process Order" Value="Manage Order"></asp:MenuItem>
+                            <asp:MenuItem NavigateUrl="~/Admin/DiliverdOrder.aspx" Text="View Order" Value="DeliveredOrder"></asp:MenuItem>
+                            <asp:MenuItem Text="View Feedback" Value="View Feedback" NavigateUrl="~/Admin/ManageFeedback.aspx"></asp:MenuItem>
+                            <asp:MenuItem NavigateUrl="~/Admin/ViewEnquiry.aspx" Text="View Enquiry" Value="View Enquiry"></asp:MenuItem>
+                            <asp:MenuItem Text="Report" Value="Categary">
+                                <asp:MenuItem NavigateUrl="~/Report/Brand.aspx" Text="Brand Report" Value="Brand"></asp:MenuItem>
+                                <asp:MenuItem NavigateUrl="~/Report/Product.aspx" Text="Product Report" Value="Product Report"></asp:MenuItem>
+                                <asp:MenuItem NavigateUrl="~/Report/Payment.aspx" Text="Payment Report" Value="Payment Report"></asp:MenuItem>
+                                <asp:MenuItem NavigateUrl="~/Report/Order.aspx" Text="Order Report" Value="Order Report"></asp:MenuItem>
+                                <asp:MenuItem NavigateUrl="~/Report/Feedback.aspx" Text="Feedback Report" Value="Feedback Report"></asp:MenuItem>
+                                <asp:MenuItem NavigateUrl="~/Report/Enquiry.aspx" Text="Enquiry Report" Value="Enquiry Report"></asp:MenuItem>
+                                <asp:MenuItem NavigateUrl="~/Report/Customer.aspx" Text="Customer Report" Value="Customer Report"></asp:MenuItem>
+                                <asp:MenuItem NavigateUrl="~/Report/Category.aspx" Text="Category" Value="Category"></asp:MenuItem>
+                                <asp:MenuItem NavigateUrl="~/Report/Brand.aspx" Text="Brand Report" Value="Brand Report"></asp:MenuItem>
+                            </asp:MenuItem>
+                        </Items>
+                    </asp:Menu>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="3" >
+                    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                    </asp:ContentPlaceHolder>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="3">
+                    <marquee scrollamount ="10" style="background-color: #339966; color:white; height: 23px; text-align: center; font-family: sans-serif; font-size: 20px; font-weight: 400" behaviour ="alternate"   >Project By Sagar & Shubham <asp:Button ID="Button1" runat="server" Text="b" AccessKey="b" style="background-color: #339966; color:#339966" BorderStyle="None" PostBackUrl="~/Admin/Adminlogin.aspx" Visible="True" /></marquee>
+                    &nbsp;</td>
+            </tr>
+        </table>
+    </div>
+    </form>
+</body>
+</html>
